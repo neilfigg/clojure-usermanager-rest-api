@@ -2,6 +2,8 @@
 
 # Tenfren Example UserManager REST API in Clojure
 
+[![CircleCI](https://circleci.com/gh/neilfigg/clojure-usermanager-rest-api/tree/main.svg?style=shield)](https://circleci.com/gh/neilfigg/clojure-usermanager-rest-api/tree/main)
+
 <a id="org6cb11aa"></a>
 
 ## Overview
