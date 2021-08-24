@@ -1,0 +1,7 @@
+Hi {{name}}
+
+Thanks for confirming your registration!.
+
+Regards,
+
+The Tenfren Team.
