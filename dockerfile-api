@@ -1,0 +1,6 @@
+FROM amazoncorretto:11
+WORKDIR /app
+MAINTAINER Neil Figg
+COPY tenfren-api.jar tenfren-api.jar
+ENV JAVA_OPTIONS="-Xmx2048"
+CMD ["java", "-jar", "tenfren-api.jar"]

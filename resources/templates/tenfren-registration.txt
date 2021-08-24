@@ -1,0 +1,13 @@
+Welcome to Tenfren {{name}}
+
+To verify your email address, please enter the verification code below.
+
+The code will expire in {{expiry-period}}.
+
+{{token}}
+
+If you didn’t make this request, don’t worry. Your account will not be created.
+
+Regards,
+
+The Tenfren Team.

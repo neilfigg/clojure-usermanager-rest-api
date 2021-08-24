@@ -1,0 +1,33 @@
+{:db-url "jdbc:h2:mem:tenfren-test.db;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE"
+ :db-adapter nil
+ :db-type   "h2"
+ :db-name   ""
+ :db-host   ""
+ :db-port   ""
+ :db-user     "sa"
+ :db-password ""
+ :db-auto-commit false
+ :db-connection-timeout 30000
+ :db-validation-timeout 5000
+ :db-idle-timeout       600000
+ :db-max-lifetime       1800000
+ :db-minimum-idle       1
+ :db-maximum-pool-size  2
+ :db-pool-name          "db-pool-test"
+ :notifier-enabled false
+ :notifier-host ""
+ :notifier-user ""
+ :notifier-password ""
+ :notifier-from "team@tenfren.com"
+ :auth-jwt-secret "somesecretkey"
+ :auth-jwt-opts {:alg :hs512}
+ :auth-jwt-token-expire-secs 31557600
+ :auth-totp-step-secs 3600
+ :auth-max-authentication-attempts 5
+ :auth-authentication-lockout-ms 900000
+ :auth-cors-allowed-origins ".*"
+ :auth-cors-max-age "600"
+ :auth-cors-allowed-headers "Authorization, Content-Type"
+ :auth-cors-allowed-methods "GET, PUT, PATCH, POST, DELETE, OPTIONS"
+ :auth-max-attempts 3
+ :server-port 3002}

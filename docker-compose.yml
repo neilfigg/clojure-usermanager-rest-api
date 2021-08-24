@@ -1,0 +1,59 @@
+version: '3.7'
+services:
+  db:
+    container_name: tenfren-db
+    image: postgres:13
+    ports:
+      - "5432:5432"
+    networks:
+      [tenfren-network]
+    environment:
+      DB_PORT: 5432
+      DB_NAME:
+      DB_USER:
+      DB_PASSWORD:
+      DB_SUPERUSER:
+      POSTGRES_PASSWORD: ${DB_SUPERUSER_PASSWORD}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - pglog:/var/log
+      - ./scripts/db-init.sh:/docker-entrypoint-initdb.d/db-init.sh
+  pgadmin:
+    container_name: tenfren-db-pgadmin4
+    image: dpage/pgadmin4
+    ports:
+      - "8082:80"
+    networks:
+      [tenfren-network]
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "neil@tenfren.com"
+      PGADMIN_DEFAULT_PASSWORD: "password"
+  api:
+    container_name: tenfren-api
+    build:
+      context: .
+      dockerfile: dockerfile-api
+    ports:
+      - "3000:3001"
+    depends_on:
+      - "db"
+    networks:
+      [tenfren-network]
+    environment:
+      DB_PORT: 5432
+      DB_NAME:
+      DB_USER:
+      DB_PASSWORD:
+      DB_URL:
+      AUTH_JWT_SECRET:
+      NOTIFIER_ENABLED:
+      NOTIFIER_HOST:
+      NOTIFIER_USER:
+      NOTIFIER_PASSWORD:
+      NOTIFIER_FROM:
+volumes:
+  pgdata:
+  pglog:
+networks:
+  tenfren-network:
+    name: tenfren-network
